@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react'
 import loaderLogo from './assets/cdlogo.png'
 
@@ -15,7 +16,7 @@ function App() {
     });
   };
 
-  console.log( coords );
+  //console.log( coords );
 
   useEffect(() => {
     setTimeout(function () { setShowElement( false ); }, 3000 );
@@ -24,10 +25,13 @@ function App() {
 
   useEffect(() => {
     if ( coords ) {
-
-
+      axios
+      .get(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=914c1ad469eef39db3b797bc89801e76&units=metric`)
+      .then((res) => setWeather(res.data));
     }
   }, [ coords ]);
+
+  //console.log( weather );
   
   return (
     <div className="App">
@@ -45,6 +49,16 @@ function App() {
         <h1>App Weather</h1>
         <h2>latitud:{ coords?.lat }</h2>
         <h2>longitud:{ coords?.lon }</h2>
+      </div>
+
+      <div className="card">
+        <h1>{ weather.name }</h1>
+        <h1>{ weather.sys?.country }</h1>
+        <h1>{ weather.sys?.country }</h1>
+        <p>Latitud:{ weather.coord?.lat }</p>
+        <p>Longitud:{ weather.coord?.lon }</p>
+        <p>Temperatura:{ weather.main?.temp }</p>
+        <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
       </div> 
     </div>
   )
