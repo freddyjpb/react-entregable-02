@@ -5,6 +5,98 @@
   text-align: center;
 }
 
+
+
+
+.loader2 {
+  height: 100vh;
+  background: black;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: roboto;
+}
+
+.loader2 img {
+
+  width: 200px;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}  
+
+
+
+
+/*=============== LOADER ===============*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-color);
+  z-index: 1000;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+
+  width: 200px;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
