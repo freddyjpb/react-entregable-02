@@ -11,7 +11,8 @@ return (
         <p>Latitud:{ weather.coord?.lat }</p>
         <p>Longitud:{ weather.coord?.lon }</p>
         <p>Temperatura:{ weather.main?.temp }</p>
-        <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
+        <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@4x.png`} alt="" />
+        <footer><button>Degrees C/F</button></footer>
     </div>
 )
 }
