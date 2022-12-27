@@ -2,6 +2,7 @@ import React from 'react'
 
 const WeatherCard = ({ weather }) => {
     //console.log( weather );
+    const weatherIconName = weather.weather?.[0].icon;
 
 return (
     <div>
@@ -11,10 +12,10 @@ return (
         <p>Latitud:{ weather.coord?.lat }</p>
         <p>Longitud:{ weather.coord?.lon }</p>
         <p>Temperatura:{ weather.main?.temp }</p>
-        <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@4x.png`} alt="" />
+        <img src={weatherIconName &&  `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
         <footer><button>Degrees C/F</button></footer>
     </div>
 )
 }
 
-export default WeatherCard
+export default WeatherCard;

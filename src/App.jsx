@@ -39,7 +39,6 @@ function App() {
   
   return (
     <div className="App">
-      
       <div className="App__loader--container"> 
         {showElement ? ( 
           <div className="App__loader--image" style={{ opacity: showElement ? 1 : 0 }} >
@@ -48,9 +47,13 @@ function App() {
         : 
           (<div></div>)}{" "}
       </div>
+
       <div>
-      <h1>Weather App</h1>
-      <h4>{ coords?.lat } | { coords?.lon }</h4>
+        <div className='App__title'>
+          <h1 className='h1-autoresize'>Weather App</h1>
+          <h1>Weather App</h1>
+        </div>
+        <h4>{ coords?.lat } | { coords?.lon }</h4>
         <WeatherCard weather={ weather }/>
       </div>
     </div>
