@@ -51,7 +51,6 @@ function App() {
       <div>
         <div className='App__title'>
           <h1 className='h1-autoresize'>Weather App</h1>
-          <h1>Weather App</h1>
         </div>
         <h4>{ coords?.lat } | { coords?.lon }</h4>
         <WeatherCard weather={ weather }/>
