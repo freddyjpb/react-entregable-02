@@ -19,15 +19,18 @@ function App() {
   //console.log( coords );
 
   useEffect(() => {
-    setTimeout(function () { setShowElement( false ); }, 3000 );
+    setTimeout(function () { setShowElement( false ); }, 10000 );
     navigator.geolocation.getCurrentPosition( success );
   }, []);
 
   useEffect(() => {
     if ( coords ) {
+      const weatherApiKey = '914c1ad469eef39db3b797bc89801e76';
+      const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${weatherApiKey}&units=metric`;
       axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=914c1ad469eef39db3b797bc89801e76&units=metric`)
-      .then((res) => setWeather(res.data));
+      .get(weatherApiUrl)
+      .then((res) => setWeather(res.data))
+      .catch((err) => console.log(err));
     }
   }, [ coords ]);
 
@@ -36,10 +39,10 @@ function App() {
   return (
     <div className="App">
       
-      <div className="loader1"> 
+      <div className="App__loader--container"> 
         {showElement ? ( 
-          <div className="loader2" style={{ opacity: showElement ? 1 : 0 }} >
-            <img src={loaderLogo} className="logo react" alt="React logo" />
+          <div className="App__loader--image" style={{ opacity: showElement ? 1 : 0 }} >
+            <img src={loaderLogo}/>
           </div>) 
         : 
           (<div></div>)}{" "}
