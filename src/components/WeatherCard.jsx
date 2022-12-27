@@ -7,6 +7,7 @@ return (
     <div>
          <h2>{ weather.name }</h2>
         <h1>{ weather.sys?.country }</h1>
+        <h2>GMT{ weather.timezone / 3600 }</h2>
         <p>Latitud:{ weather.coord?.lat }</p>
         <p>Longitud:{ weather.coord?.lon }</p>
         <p>Temperatura:{ weather.main?.temp }</p>
