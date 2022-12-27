@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import loaderLogo from './assets/cdlogo.png'
 
 import './App.css'
+import WeatherCard from './components/WeatherCard';
 
 function App() {
   const [ showElement, setShowElement ] = useState( true );
@@ -47,22 +48,11 @@ function App() {
         : 
           (<div></div>)}{" "}
       </div>
-
       <div>
-        <h1>App Weather</h1>
-        <h2>latitud:{ coords?.lat }</h2>
-        <h2>longitud:{ coords?.lon }</h2>
+      <h1>Weather App</h1>
+      <h4>{ coords?.lat } | { coords?.lon }</h4>
+        <WeatherCard weather={ weather }/>
       </div>
-
-      <div className="card">
-        <h1>{ weather.name }</h1>
-        <h1>{ weather.sys?.country }</h1>
-        <h1>{ weather.sys?.country }</h1>
-        <p>Latitud:{ weather.coord?.lat }</p>
-        <p>Longitud:{ weather.coord?.lon }</p>
-        <p>Temperatura:{ weather.main?.temp }</p>
-        <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
-      </div> 
     </div>
   )
 }
