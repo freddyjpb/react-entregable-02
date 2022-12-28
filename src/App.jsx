@@ -50,7 +50,9 @@ function App() {
 
       <div>
         <div className='App__title'>
+          <i class='bx bx-moon change-theme' id="theme-button"></i>
           <h1 className='h1-autoresize'>Weather App</h1>
+          <i class='bx bx-grid-alt'></i>
         </div>
         <h4>{ coords?.lat } | { coords?.lon }</h4>
         <WeatherCard weather={ weather }/>

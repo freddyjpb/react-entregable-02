@@ -33,7 +33,7 @@ body {
 
 h1 {
     color: var(--black);
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: bold;
 }
@@ -50,18 +50,18 @@ h3 {
     font-weight:lighter;    
 }
 
-.h1-autoresize { font-size: calc(30px + (80 - 30) * ((100vw - 320px) / (1128 - 320))); }
+.h1-autoresize { font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (500 - 320))); }
 .h2-autoresize { font-size: calc(32px + (50 - 32) * ((100vw - 320px) / (1128 - 320))); }
 .h3-autoresize { font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1128 - 320))); }
 
 .stylebold { font-weight: bold; }
 .coloraqua { color: var(--aquamarine); }
 
-@media screen and ( min-width: 1128px ){
+@media screen and ( min-width: 500px ){
   .photo-01 { display: none; }
   .photo-02 { display: block; }
 
-  .h1-autoresize { font-size: 80px; }
+  .h1-autoresize { font-size: 40px; }
   .h2-autoresize { font-size: 50px; }
   .h3-autoresize { font-size: 22px; }
 
