@@ -7,6 +7,7 @@ import WeatherCard from './components/WeatherCard';
 
 function App() {
   const [ showElement, setShowElement ] = useState( true );
+  const [ showDarkMode, setShowDarkMode ] = useState ( true );
   const [ coords, setCoords ] = useState();
   const [ weather, setWeather ] = useState({});
 
@@ -50,9 +51,18 @@ function App() {
 
       <div>
         <div className='App__title'>
-          <i class='bx bx-moon change-theme' id="theme-button"></i>
           <h1 className='h1-autoresize'>Weather App</h1>
-          <i class='bx bx-grid-alt'></i>
+          <div>
+            {showDarkMode ? ( 
+              <button><i class='bx bx-moon change-theme' id="theme-button"></i></button>
+            ) : (
+              <button><i class='bx bx-sun'></i></button>
+            )}   
+
+
+
+            <button><i class='bx bx-grid-alt'></i></button>
+          </div>
         </div>
         <h4>{ coords?.lat } | { coords?.lon }</h4>
         <WeatherCard weather={ weather }/>

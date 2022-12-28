@@ -45,7 +45,52 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-@media screen and ( min-width: 500px ) {
+.App__title button {
+  background-color: whitesmoke;
+  border-color: gray;
+  border-width: 0;
+  border: 1px solid #d5d9d9;
+  
+  width:40px; height: 40px;
+  border-radius: 10px;
+  
+  font-size: 30px;
+  cursor: pointer;
 
+
+
+  
+
+
+
+ 
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+ 
+    line-height: 29px;
+
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+
+    vertical-align: middle;
+
+  }
+  
+  .App__title button:hover {
+    background-color: #f7fafa;
+    transform: scale(1.10);
+  }
+  
+  .App__title button:focus {
+  
+  }
+
+
+
+@media screen and ( min-width: 500px ) {
   .App__title { font-size: 40px; }
 }
