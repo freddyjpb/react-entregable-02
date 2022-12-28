@@ -83,6 +83,7 @@
   .App__title button:hover {
     background-color: #f7fafa;
     transform: scale(1.10);
+    transition: transform 100ms ease;
   }
   
   .App__title button:focus {

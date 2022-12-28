@@ -57,6 +57,15 @@ h3 {
 .stylebold { font-weight: bold; }
 .coloraqua { color: var(--aquamarine); }
 
+
+#GeneralCard {
+    background-color: whitesmoke;
+    width: auto; height: auto;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
 @media screen and ( min-width: 500px ){
   .photo-01 { display: none; }
   .photo-02 { display: block; }

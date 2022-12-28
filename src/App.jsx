@@ -11,6 +11,8 @@ function App() {
   const [ coords, setCoords ] = useState();
   const [ weather, setWeather ] = useState({});
 
+const handleClickDarkMode = () => setShowDarkMode( !showDarkMode );
+
   const success = pos => { 
     setCoords ({
       lat: pos.coords.latitude,
@@ -53,11 +55,13 @@ function App() {
         <div className='App__title'>
           <h1 className='h1-autoresize'>Weather App</h1>
           <div>
+            <button onClick={ handleClickDarkMode }>
             {showDarkMode ? ( 
-              <button><i class='bx bx-moon change-theme' id="theme-button"></i></button>
+              <i class='bx bx-moon'></i>
             ) : (
-              <button><i class='bx bx-sun'></i></button>
-            )}   
+              <i class='bx bx-sun'></i>
+            )}
+            </button>   
 
 
 
