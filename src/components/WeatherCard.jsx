@@ -14,9 +14,13 @@ const WeatherCard = ({ weather, theme }) => {
 
     return (
         <div className={`Weather__card ${theme}`}>
-            <h2 className={ `h2-autoresize--${theme}`}>{weather.name}</h2>
-            <h2 className={ `h2-autoresize--${theme}`}>{weather.sys?.country}</h2>
-            <h1 className={ `h1-autoresize--${theme}`}>GMT{weather.timezone / 3600}</h1>
+            <div className='Weather__card--location'>
+                <img src='/wwloc.png' alt="" />
+                <div>
+                    <h2 className={`h2-autoresize--${theme}`}>{weather.name}</h2>
+                    <h2 className={ `h2-autoresize--${theme}`}>{weather.sys?.country}</h2>
+                    <h1 className={ `h1-autoresize--${theme}`}>GMT{weather.timezone / 3600}</h1>               </div>
+                </div>
             <p>Latitud:{weather.coord?.lat}</p>
             <p>Longitud:{weather.coord?.lon}</p>
             <p>Temperatura:{weather.main?.temp}</p>

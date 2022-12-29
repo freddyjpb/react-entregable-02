@@ -1,6 +1,6 @@
 .Weather__card {
     max-width: 500px;
-    margin: 16px 0 0;    
+    margin: 16px auto;    
     padding: 16px;
     text-align: center;
     border-radius: 10px;
@@ -9,4 +9,13 @@
 .Weather__card.light {
     background-color: var(--card-color-light);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Weather__card--location {
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: space-evenly;
+}
+
+.Weather__card--location img {
+    width: 100px;
 }
