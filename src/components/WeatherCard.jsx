@@ -5,7 +5,7 @@ const WeatherCard = ({ weather }) => {
     const weatherIconName = weather.weather?.[0].icon;
 
 return (
-    <div id='GeneralCard'>
+    <div className='Temp'>
          <h2>{ weather.name }</h2>
         <h1>{ weather.sys?.country }</h1>
         <h2>GMT{ weather.timezone / 3600 }</h2>

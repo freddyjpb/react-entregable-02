@@ -6,6 +6,35 @@
     text-align: center;
 }
 
+/*=============== LOADER ===============*/
+.App__loader--image {
+    background: var(--body-color-light);
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    position: fixed;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 1000;
+  }
+  
+  .App__loader--image img {
+    width: 100px; height: auto;
+    animation: scroll 1.5s infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+
 .light { background-color: var(--body-color-light); }
 .dark { background-color: var(--body-color-dark); }
     
