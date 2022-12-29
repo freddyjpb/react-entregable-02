@@ -18,23 +18,22 @@
   }
   
   .App__loader--image img {
-    width: 100px; height: auto;
+    width: 150px; height: auto;
     animation: scroll 1.5s infinite;
   }
   
   @keyframes scroll {
     0% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(0);
     }
     50% {
-      transform: translateY(40px);
+      transform: translateY(40px) rotate(180deg);
     }
     100% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(360deg);
     }
   }
   
-
 .light { background-color: var(--body-color-light); }
 .dark { background-color: var(--body-color-dark); }
     
@@ -50,6 +49,15 @@
     border-radius: 10px;
 }
 
+.App_title--container {
+  display: flex; flex-direction: row;
+  align-items: center; justify-content: space-between;
+}
+
+.App__title img {
+  width: 50px;
+}
+
 .App__title.light {
     background-color: var(--card-color-light);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -59,12 +67,6 @@
     background-color: var(--card-color-dark);
     box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
 }
-
-
-
-
-
-
 
 .App__title button {
     background-color: var(--button-color-light);
@@ -105,11 +107,10 @@
     transition: transform 100ms ease;
 }
     
-    .App__title button:focus {
+.App__title button:focus {
     
-    }
+}
   
-  
-  @media screen and ( min-width: 500px ) {
-    .App__title { font-size: 40px; }
-  }
+@media screen and ( min-width: 500px ) {
+  .App__title { font-size: 40px; }
+}

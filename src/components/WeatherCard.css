@@ -1,4 +1,15 @@
-Temp {
-    background-color: red;
-    border: 2px dashed red;
+.Weather__card {
+    /*border: 2px dashed blue;*/
+    max-width: 500px;
+    margin: 16px auto;    
+    padding: 16px;
+    text-align: center;
+    border-radius: 10px;
 }
+
+.Weather__card.light {
+    background-color: var(--card-color-light);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+

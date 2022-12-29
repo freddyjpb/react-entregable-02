@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-import loaderLogo from './assets/cdlogo.png'
+import { useEffect, useState } from 'react';
+import loaderLogo from './assets/cdlogo.png';
 import WeatherCard from './components/WeatherCard';
 
-import './App.css'
+import './App.css';
 
 function App() {
   const [ showElement, setShowElement ] = useState( true );
@@ -37,7 +37,7 @@ function App() {
   
   useEffect(() => {
     document.body.className = theme;
-    console.log( theme );
+    //console.log( theme );
   }, [ theme ]);
 
   useEffect(() => {
@@ -67,7 +67,10 @@ function App() {
 
       <div>
         <div className={ `App__title ${theme}`}>
-          <h1 className={ `h1-autoresize--${theme}`}>Weather App</h1>
+          <div  className='App_title--container'>
+            <img src={loaderLogo}/>
+            <h1 className={ `h1-autoresize--${theme}`}>Weather App</h1>
+          </div>
           <div>
             <button onClick={handleClickDarkMode}>
               {showDarkMode ? (
@@ -79,10 +82,10 @@ function App() {
             <button><i className='bx bx-menu'></i></button>
           </div>
         </div>
-        <WeatherCard weather={ weather }/>
+        <WeatherCard weather={ weather } theme={ theme }/>
       </div>
     </div>
   )
 }
 
-export default App
+export default App;

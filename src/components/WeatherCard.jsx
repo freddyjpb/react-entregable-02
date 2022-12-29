@@ -1,12 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { useEffect} from 'react'
 
-const WeatherCard = ({ weather }) => {
+import './WeatherCard.css';
+
+const WeatherCard = ({ weather, theme }) => {
     //console.log( weather );
+    //console.log( theme );
     const weatherIconName = weather.weather?.[0].icon;
 
+    useEffect(() => {
+        document.body.className = theme;
+        //console.log( theme );
+      }, [ theme ]);
+
 return (
-    <div className='Temp'>
-         <h2>{ weather.name }</h2>
+    <div className={ `Weather__card ${theme }`}>
+        <h2>{ weather.name }</h2>
         <h1>{ weather.sys?.country }</h1>
         <h2>GMT{ weather.timezone / 3600 }</h2>
         <p>Latitud:{ weather.coord?.lat }</p>
