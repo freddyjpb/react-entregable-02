@@ -11,7 +11,81 @@
     --gray:       #D1CECA;
     --black:      #242635;
     --white:      #FFFFFF;
+
+/*========== Colors ==========*/
+--body-color-light: hsl(206, 4%, 97%);
+--card-color-light: hsl(206, 4%, 96%);
+--title-color-light: hsl(0, 0%, 15%);
+--button-color-light: hsl(206, 4%, 95%);
+
+
+--body-color-dark: hsl(249, 19%, 14%);
+--card-color-dark: hsla(100, 60%, 1%, 0.288);
+--title-color-dark: hsl(0, 0%, 95%);
+
+
+
+
+
+--first-color: hsl(354, 78%, 60%);
+
+--button-color-alt: hsl(0, 0%, 21%);
+
+
+
+--text-color: hsl(0, 0%, 35%);
+--text-color-light: hsl(0, 0%, 55%);
+
+
+
+--border-color: hsl(0, 0%, 94%);
+
+
+
+/*========== Font and typography ==========*/
+--body-font: 'Roboto', sans-serif;
+--biggest-font-size: 2rem;
+--h1-font-size: 1.5rem;
+--h2-font-size: 1.25rem;
+--h3-font-size: 1rem;
+--normal-font-size: .938rem;
+--small-font-size: .813rem;
+--smaller-font-size: .75rem;
+
+/*========== Font weight ==========*/
+--font-medium: 500;
+--font-bold: 700;
+
+/*========== Margenes Bottom ==========*/
+--mb-0-5: .5rem;
+--mb-0-75: .75rem;
+--mb-1: 1rem;
+--mb-1-5: 1.5rem;
+--mb-2: 2rem;
+--mb-2-5: 2.5rem;
+--mb-3: 3rem;
+
+/*========== z index ==========*/
+--z-tooltip: 10;
+--z-fixed: 100;
+
+
+
 }
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+
+
+    --text-color: hsl(0, 0%, 75%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+  }
+  
 
 /*=============================================================================================*/
 /* S E L E C T O R   U N I V E R S A L
@@ -69,6 +143,8 @@ h3 {
 @media screen and ( min-width: 500px ){
   .photo-01 { display: none; }
   .photo-02 { display: block; }
+
+
 
   .h1-autoresize { font-size: 40px; }
   .h2-autoresize { font-size: 50px; }

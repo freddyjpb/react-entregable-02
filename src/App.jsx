@@ -1,75 +1,42 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react'
-import loaderLogo from './assets/cdlogo.png'
-
 import './App.css'
-import WeatherCard from './components/WeatherCard';
 
 function App() {
-  const [ showElement, setShowElement ] = useState( true );
-  const [ showDarkMode, setShowDarkMode ] = useState ( true );
-  const [ coords, setCoords ] = useState();
-  const [ weather, setWeather ] = useState({});
+  const [showDarkMode, setShowDarkMode] = useState(true);
+  const [ theme, setTheme ] = useState ( 'light' );
 
-const handleClickDarkMode = () => setShowDarkMode( !showDarkMode );
 
-  const success = pos => { 
-    setCoords ({
-      lat: pos.coords.latitude,
-      lon: pos.coords.longitude
-    });
-  };
-
-  //console.log( coords );
-
-  useEffect(() => {
-    setTimeout(function () { setShowElement( false ); }, 10000 );
-    navigator.geolocation.getCurrentPosition( success );
-  }, []);
-
-  useEffect(() => {
-    if ( coords ) {
-      const weatherApiKey = '914c1ad469eef39db3b797bc89801e76';
-      const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${weatherApiKey}&units=metric`;
-      axios
-      .get(weatherApiUrl)
-      .then((res) => setWeather(res.data))
-      .catch((err) => console.log(err));
+  const handleClickDarkMode = () => {
+    setShowDarkMode(!showDarkMode);
+    if ( showDarkMode ) {
+      setTheme( 'dark' );
+    } else {
+      setTheme( 'light' );
     }
-  }, [ coords ]);
+  }
 
-  //console.log( weather );
-  
+  useEffect(() => {
+    document.body.className = theme;
+    console.log( theme );
+  }, [ theme ]);
+
+
   return (
-    <div className="App">
-      <div className="App__loader--container"> 
-        {showElement ? ( 
-          <div className="App__loader--image" style={{ opacity: showElement ? 1 : 0 }} >
-            <img src={loaderLogo}/>
-          </div>) 
-        : 
-          (<div></div>)}{" "}
-      </div>
-
+    <div className={ `App ${theme }`}>
       <div>
-        <div className='App__title'>
-          <h1 className='h1-autoresize'>Weather App</h1>
+        <div className={ `App__title ${theme}`}>
+          <h1 className={ `h1-autoresize--${theme}`}>Weather App</h1>
           <div>
-            <button onClick={ handleClickDarkMode }>
-            {showDarkMode ? ( 
-              <i class='bx bx-moon'></i>
-            ) : (
-              <i class='bx bx-sun'></i>
-            )}
-            </button>   
-
-
-
-            <button><i class='bx bx-grid-alt'></i></button>
+            <button onClick={handleClickDarkMode}>
+              {showDarkMode ? (
+                <i className='bx bx-moon'></i>
+              ) : (
+                <i className='bx bx-sun'></i>
+              )}
+            </button>
+            <button><i className='bx bx-menu'></i></button>
           </div>
         </div>
-        <h4>{ coords?.lat } | { coords?.lon }</h4>
-        <WeatherCard weather={ weather }/>
       </div>
     </div>
   )
