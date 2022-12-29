@@ -7,11 +7,6 @@
 /* R O O T
 /*=============================================================================================*/
 :root {
-    --aquamarine: #34B0BE;
-    --gray:       #D1CECA;
-    --black:      #242635;
-    --white:      #FFFFFF;
-
 /*========== Colors ==========*/
 --body-color-light: hsl(206, 4%, 97%);
 --card-color-light: hsl(206, 4%, 96%);
@@ -40,8 +35,6 @@
 
 --border-color: hsl(0, 0%, 94%);
 
-
-
 /*========== Font and typography ==========*/
 --body-font: 'Roboto', sans-serif;
 --biggest-font-size: 2rem;
@@ -68,9 +61,6 @@
 /*========== z index ==========*/
 --z-tooltip: 10;
 --z-fixed: 100;
-
-
-
 }
 
 /*=============== THEME ===============*/
@@ -85,8 +75,6 @@ body.dark-theme {
     --container-color: hsl(246, 16%, 12%);
     --border-color: hsl(0, 0%, 20%);
   }
-  
-
 /*=============================================================================================*/
 /* S E L E C T O R   U N I V E R S A L
 /*=============================================================================================*/
@@ -105,32 +93,14 @@ body {
     font-style: normal;
 }
 
-h1 {
-    color: var(--black);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: bold;
-}
+h1 { font-size: 18px; font-style: normal; font-weight: bold; }
+h1 { font-size: 30px; font-style: normal; font-weight: bold; }
 
-h2 {
-    font-size: 32px;
-    font-style:normal;
-    font-weight:lighter;
-}
+.h1-autoresize--light,
+.h1-autoresize--dark { font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (500 - 320))); }
 
-h3 {
-    font-size: 16px;
-    font-style:normal;
-    font-weight:lighter;    
-}
-
-.h1-autoresize { font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (500 - 320))); }
-.h2-autoresize { font-size: calc(32px + (50 - 32) * ((100vw - 320px) / (1128 - 320))); }
-.h3-autoresize { font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1128 - 320))); }
-
-.stylebold { font-weight: bold; }
-.coloraqua { color: var(--aquamarine); }
-
+.h2-autoresize--light,
+.h2-autoresize--dark { font-size: calc(30px + (45 - 30) * ((100vw - 320px) / (500 - 320))); }
 
 #GeneralCard {
     background-color: red;
@@ -141,24 +111,11 @@ h3 {
   }
 
 @media screen and ( min-width: 500px ){
-  .photo-01 { display: none; }
-  .photo-02 { display: block; }
+    .h1-autoresize--light,
+    .h1-autoresize--dark { font-size: 36px; }
 
-
-
-  .h1-autoresize { font-size: 40px; }
-  .h2-autoresize { font-size: 50px; }
-  .h3-autoresize { font-size: 22px; }
-
-  .div-section-1 {
-      max-height: 500px;
-      display: flex; flex-direction: row;
-      justify-content:center; align-items: center; 
-  }
-
-  .div-section-2 {
-      padding-top: 0;
-  }
+    .h2-autoresize--light,
+    .h2-autoresize--dark { font-size: 45px; }
 }
 
 /*border: 1px dashed blue;*/
