@@ -123,6 +123,9 @@ h1, h2, h3 { font-style: normal; font-weight: bold; }
 
     .h4-autoresize--light,
     .h4-autoresize--dark { font-size: 12px; }
+
+    .h5-autoresize--light,
+    .h5-autoresize--dark { font-size: 150px; }
 }
 
 /*border: 1px dashed blue;*/

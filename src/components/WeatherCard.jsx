@@ -23,8 +23,11 @@ const WeatherCard = ({ weather, theme }) => {
                 </div>
             </div>
 
-            <p>Temperatura:{weather.main?.temp}</p>
-            <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
+            <div>
+                <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
+                <h5 className={`h5-autoresize--${theme}`}>{weather.main?.temp}</h5>
+
+            </div>
             <footer><button>Degrees C/F</button></footer>
 
             <div className='Weather__Card--footer'>
