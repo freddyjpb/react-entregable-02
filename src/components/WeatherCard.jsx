@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import countries from '../countries.json'
 import './WeatherCard.css';
 
-const WeatherCard = ({ weather, theme }) => {
+const WeatherCard = ({ theme, weather, temperature }) => {
     //console.log( weather );
     //console.log( theme );
     const weatherIconName = weather.weather?.[0].icon;
@@ -25,7 +25,7 @@ const WeatherCard = ({ weather, theme }) => {
 
             <div>
                 <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
-                <h5 className={`h5-autoresize--${theme}`}>{weather.main?.temp}</h5>
+                <h5 className={`h5-autoresize--${theme}`}>{temperature.celsius}°C</h5>
 
             </div>
             <footer><button>Degrees C/F</button></footer>

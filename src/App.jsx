@@ -11,6 +11,7 @@ function App() {
   const [ theme, setTheme ] = useState ( 'light' );
   const [ coords, setCoords ] = useState();
   const [ weather, setWeather ] = useState({});
+  const [ temperature, setTemperature ] = useState();
 
   const handleClickDarkMode = () => {
     setShowDarkMode(!showDarkMode);
@@ -43,10 +44,15 @@ function App() {
   useEffect(() => {
     if ( coords ) {
       const weatherApiKey = '914c1ad469eef39db3b797bc89801e76';
-      const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${weatherApiKey}&units=metric`;
+      const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${weatherApiKey}`;
       axios
       .get(weatherApiUrl)
-      .then((res) => setWeather(res.data))
+      .then((res) => {
+        setWeather(res.data);
+        const celsius = (res.data.main.temp - 273.15).toFixed( 1 );
+        const farenheit = (celsius * 9/5 + 32).toFixed( 1 );
+        setTemperature({ celsius, farenheit});
+      })
       .catch((err) => console.log(err));
     }
   }, [ coords ]);
@@ -82,7 +88,7 @@ function App() {
             <button><i className='bx bx-menu'></i></button>
           </div>
         </div>
-        <WeatherCard weather={ weather } theme={ theme }/>
+        <WeatherCard theme={ theme } weather={ weather } temperature={ temperature }/>
       </div>
     </div>
   )
