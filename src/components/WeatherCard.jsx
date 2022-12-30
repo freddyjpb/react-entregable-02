@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import countries from '../countries.json'
 import './WeatherCard.css';
 
 const WeatherCard = ({ theme, weather, temperature }) => {
-    //console.log( weather );
-    //console.log( theme );
-    //console.log( temperature);
+    const [isCelsius, setIsCelsius] = useState( true )
     const weatherIconName = weather.weather?.[0].icon;
+
+    const handleClickTemperature = () => {
+        setIsCelsius ( !isCelsius );
+    }
 
     useEffect(() => {
         document.body.className = theme;
@@ -26,10 +28,9 @@ const WeatherCard = ({ theme, weather, temperature }) => {
 
             <div>
                 <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
-                <h5 className={`h5-autoresize--${theme}`}>{temperature?.celsius}°C</h5>
-
+                <h5 className={`h5-autoresize--${theme}`}>{ isCelsius ? `${ temperature?.celsius } °C` : `${ temperature?.farenheit } °F` }</h5>
             </div>
-            <footer><button>Degrees C/F</button></footer>
+            <footer><button onClick={ handleClickTemperature }><h4 className={`h4-autoresize--${theme}`}>Change Degrees</h4></button></footer>
 
             <div className='Weather__Card--footer'>
                 <h3 className={ `h3-autoresize--${theme}`}>GMT{weather.timezone / 3600}</h3>

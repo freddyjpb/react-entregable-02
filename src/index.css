@@ -10,12 +10,12 @@
 /*========== Colors ==========*/
 --body-color-light: rgba(255, 255, 255, 1);
 --card-color-light: rgba(255, 255, 255, 0.75);
+--button-color-light: rgba(255, 255, 255, 0.75);
 
 
 
 
 --title-color-light: hsl(0, 0%, 15%);
---button-color-light: hsl(206, 4%, 95%);
 
 
 --body-color-dark: hsl(249, 19%, 14%);

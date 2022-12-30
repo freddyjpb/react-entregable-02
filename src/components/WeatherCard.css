@@ -6,6 +6,17 @@
     border-radius: 10px;
 }
 
+.Weather__card button {
+    background-color: var(--button-color-light);
+    border: 1px solid #d5d9d9;
+    margin: 16px;    
+    padding: 8px 16px 8px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+}
+
 .Weather__card.light {
     background-color: var(--card-color-light);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -26,4 +37,10 @@
     align-items: center; justify-content: space-between;
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and ( min-width: 500px ){
+    .Weather__card--location img {
+        width: 150px;
+    }
 }
