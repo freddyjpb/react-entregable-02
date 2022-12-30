@@ -6,6 +6,7 @@ import './WeatherCard.css';
 const WeatherCard = ({ theme, weather, temperature }) => {
     //console.log( weather );
     //console.log( theme );
+    //console.log( temperature);
     const weatherIconName = weather.weather?.[0].icon;
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const WeatherCard = ({ theme, weather, temperature }) => {
 
             <div>
                 <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
-                <h5 className={`h5-autoresize--${theme}`}>{temperature.celsius}°C</h5>
+                <h5 className={`h5-autoresize--${theme}`}>{temperature?.celsius}°C</h5>
 
             </div>
             <footer><button>Degrees C/F</button></footer>

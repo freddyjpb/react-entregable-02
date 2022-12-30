@@ -111,6 +111,9 @@ h1, h2, h3 { font-style: normal; font-weight: bold; }
 .h4-autoresize--light,
 .h4-autoresize--dark { font-size: calc(8px + (12 - 8) * ((100vw - 320px) / (500 - 320))); }
 
+.h5-autoresize--light,
+.h5-autoresize--dark { font-size: calc(80px + (120 - 80) * ((100vw - 320px) / (500 - 320))); }
+
 @media screen and ( min-width: 500px ){
     .h1-autoresize--light,
     .h1-autoresize--dark { font-size: 36px; }
@@ -125,7 +128,7 @@ h1, h2, h3 { font-style: normal; font-weight: bold; }
     .h4-autoresize--dark { font-size: 12px; }
 
     .h5-autoresize--light,
-    .h5-autoresize--dark { font-size: 150px; }
+    .h5-autoresize--dark { font-size: 120px; }
 }
 
 /*border: 1px dashed blue;*/
