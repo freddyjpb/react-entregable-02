@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import countries from '../countries.json'
 import './WeatherCard.css';
 
 const WeatherCard = ({ weather, theme }) => {
@@ -18,14 +19,22 @@ const WeatherCard = ({ weather, theme }) => {
                 <img src='/wwloc.png' alt="" />
                 <div>
                     <h2 className={`h2-autoresize--${theme}`}>{weather.name}</h2>
-                    <h2 className={ `h2-autoresize--${theme}`}>{weather.sys?.country}</h2>
-                    <h1 className={ `h1-autoresize--${theme}`}>GMT{weather.timezone / 3600}</h1>               </div>
+                    <h2 className={`h2-autoresize--${theme}`}>Costa Rica</h2>
                 </div>
-            <p>Latitud:{weather.coord?.lat}</p>
-            <p>Longitud:{weather.coord?.lon}</p>
+            </div>
+
             <p>Temperatura:{weather.main?.temp}</p>
             <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
             <footer><button>Degrees C/F</button></footer>
+
+            <div className='Weather__Card--footer'>
+                <h3 className={ `h3-autoresize--${theme}`}>GMT{weather.timezone / 3600}</h3>
+                <div>
+                    <h4 className={`h4-autoresize--${theme}`}>Latitud:{weather.coord?.lat}</h4>
+                    <h4 className={`h4-autoresize--${theme}`}>Longitud:{weather.coord?.lon}</h4>
+                </div>
+                <h3 className={ `h3-autoresize--${theme}`}>{weather.sys?.country}</h3>
+            </div>
         </div>
     )
 }

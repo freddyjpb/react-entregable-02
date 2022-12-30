@@ -93,12 +93,11 @@ body {
     background-color: var(--white);
     color: var(--black);
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
 }
 
-h1 { font-size: 18px; font-style: normal; font-weight: bold; }
-h1 { font-size: 30px; font-style: normal; font-weight: bold; }
+h1, h2, h3 { font-style: normal; font-weight: bold; }
 
 .h1-autoresize--light,
 .h1-autoresize--dark { font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (500 - 320))); }
@@ -106,13 +105,11 @@ h1 { font-size: 30px; font-style: normal; font-weight: bold; }
 .h2-autoresize--light,
 .h2-autoresize--dark { font-size: calc(30px + (45 - 30) * ((100vw - 320px) / (500 - 320))); }
 
-#GeneralCard {
-    background-color: red;
-    width: auto; height: auto;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  }
+.h3-autoresize--light,
+.h3-autoresize--dark { font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (500 - 320))); }
+
+.h4-autoresize--light,
+.h4-autoresize--dark { font-size: calc(8px + (12 - 8) * ((100vw - 320px) / (500 - 320))); }
 
 @media screen and ( min-width: 500px ){
     .h1-autoresize--light,
@@ -120,6 +117,12 @@ h1 { font-size: 30px; font-style: normal; font-weight: bold; }
 
     .h2-autoresize--light,
     .h2-autoresize--dark { font-size: 45px; }
+
+    .h3-autoresize--light,
+    .h3-autoresize--dark { font-size: 20px; }
+
+    .h4-autoresize--light,
+    .h4-autoresize--dark { font-size: 12px; }
 }
 
 /*border: 1px dashed blue;*/

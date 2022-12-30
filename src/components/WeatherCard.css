@@ -13,9 +13,17 @@
 
 .Weather__card--location {
     display: flex; flex-direction: row;
-    align-items: center; justify-content: space-evenly;
+    align-items: center; justify-content: space-between;
 }
 
 .Weather__card--location img {
-    width: 100px;
+    width: calc(60px + (150 - 60) * ((100vw - 320px) / (500 - 320)));
+}
+
+.Weather__Card--footer {
+    padding: 8px;
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
