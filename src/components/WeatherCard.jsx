@@ -5,12 +5,15 @@ import './WeatherCard.css';
 
 const WeatherCard = ({ theme, weather, temperature }) => {
     const [isCelsius, setIsCelsius] = useState( true )
+    
     const weatherIconName = weather.weather?.[0].icon;
 
     const handleClickTemperature = () => {
         setIsCelsius ( !isCelsius );
     }
 
+    const country = countries.filter( res => res.code_2 === weather.sys?.country );
+    
     useEffect(() => {
         document.body.className = theme;
         //console.log( theme );
@@ -22,12 +25,21 @@ const WeatherCard = ({ theme, weather, temperature }) => {
                 <img src='/wwloc.png' alt="" />
                 <div>
                     <h2 className={`h2-autoresize--${theme}`}>{weather.name}</h2>
-                    <h2 className={`h2-autoresize--${theme}`}>Costa Rica</h2>
+                    <h2 className={`h2-autoresize--${theme}`}>{country[0]?.name_es}</h2>
                 </div>
             </div>
 
             <div>
-                <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
+                <div className='tempo'>
+                    <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
+                    <div>
+                        <ul>
+                            <li><span>Wind Speed:</span>{ weather.wind?.speed } m/s</li>
+                            <li><span>Clouds:</span>{ weather.clouds?.all } %</li>
+                            <li><span>Pressure:</span>{ weather.main?.pressure } hPa</li>
+                        </ul>
+                    </div>
+                </div>
                 <h5 className={`h5-autoresize--${theme}`}>{ isCelsius ? `${ temperature?.celsius } °C` : `${ temperature?.farenheit } °F` }</h5>
             </div>
             <footer><button onClick={ handleClickTemperature }><h4 className={`h4-autoresize--${theme}`}>Change Degrees</h4></button></footer>

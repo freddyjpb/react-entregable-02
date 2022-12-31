@@ -22,8 +22,10 @@
   }
   
   .App__loader--image img {
-    margin-top: calc((( 100vh - 150px ) / 2 ) - 20px );
     width: 150px; height: auto;
+    margin-top: calc((( 100vh - 150px ) / 2 ) - 20px );
+
+
     animation: scroll 1.5s infinite;
   }
   
