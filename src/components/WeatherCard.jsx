@@ -12,6 +12,8 @@ const WeatherCard = ({ theme, weather, temperature }) => {
         setIsCelsius ( !isCelsius );
     }
 
+    const windspeed = ( weather.wind?.speed * 3.6 ).toFixed( 1 );
+
     const country = countries.filter( res => res.code_2 === weather.sys?.country );
     
     useEffect(() => {
@@ -34,7 +36,7 @@ const WeatherCard = ({ theme, weather, temperature }) => {
                     <img src={weatherIconName && `http://openweathermap.org/img/wn/${weatherIconName}@4x.png`} alt="" />
                     <div>
                         <ul>
-                            <li><span>Wind Speed:</span>{ weather.wind?.speed } m/s</li>
+                            <li><span>Wind Speed: </span>{ windspeed } km/h</li>
                             <li><span>Clouds:</span>{ weather.clouds?.all } %</li>
                             <li><span>Pressure:</span>{ weather.main?.pressure } hPa</li>
                         </ul>
