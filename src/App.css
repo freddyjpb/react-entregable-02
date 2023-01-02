@@ -10,22 +10,18 @@
     text-align: center;
 }
 
-/*=============== LOADER ===============*/
 .App__loader--image {
     background: var(--body-color-light);
     left: 0; top: 0;
     width: 100%; height: 100%;
     position: fixed;
-    /*display: flex; flex-direction: column;*/
-    /*align-items: center; justify-content: center;*/
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     z-index: 1000;
   }
   
   .App__loader--image img {
     width: 150px; height: auto;
-    margin-top: calc((( 100vh - 150px ) / 2 ) - 20px );
-
-
     animation: scroll 1.5s infinite;
   }
   
@@ -42,11 +38,7 @@
   }
   
 .light { background-color: var(--body-color-light); }
-.dark { background-color: var(--body-color-dark); }
     
-.h1-autoresize--light { color: var(--title-color-light); }
-.h1-autoresize--dark { color: var(--title-color-dark); }
-
 .App__title {
     width: auto; height: auto; 
     max-width: 500px;
@@ -69,44 +61,22 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.App__title.dark {
-    background-color: var(--card-color-dark);
-    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
-}
-
 .App__title button {
     background-color: var(--button-color-light);
-    opacity: 0.5;
-    filter: alpha(opacity=50);
+    opacity: 0.50;
+    /*filter: alpha(opacity=50);*/
     border: 1px solid #d5d9d9;
-    
     width:40px; height: 40px;
     border-radius: 10px;
-    
     font-size: 30px;
     cursor: pointer;
-  
-  
-  
-    
-  
-  
-  
-   
     border-radius: 8px;
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     box-sizing: border-box;
-
     cursor: pointer;
-   
     line-height: 29px;
-  
     text-align: center;
     text-decoration: none;
-    user-select: none;
-  
-    vertical-align: middle;
-  
 }
     
 .App__title button:hover {

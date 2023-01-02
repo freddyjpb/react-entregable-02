@@ -11,74 +11,8 @@
 --body-color-light: rgba(255, 255, 255, 1);
 --card-color-light: rgba(255, 255, 255, 0.75);
 --button-color-light: rgba(255, 255, 255, 0.75);
-
-
-
-
---title-color-light: hsl(0, 0%, 15%);
-
-
---body-color-dark: hsl(249, 19%, 14%);
---card-color-dark: hsla(100, 60%, 1%, 0.288);
---title-color-dark: hsl(0, 0%, 95%);
-
-
-
-
-
---first-color: hsl(354, 78%, 60%);
-
---button-color-alt: hsl(0, 0%, 21%);
-
-
-
---text-color: hsl(0, 0%, 35%);
---text-color-light: hsl(0, 0%, 55%);
-
-
-
---border-color: hsl(0, 0%, 94%);
-
-/*========== Font and typography ==========*/
---body-font: 'Roboto', sans-serif;
---biggest-font-size: 2rem;
---h1-font-size: 1.5rem;
---h2-font-size: 1.25rem;
---h3-font-size: 1rem;
---normal-font-size: .938rem;
---small-font-size: .813rem;
---smaller-font-size: .75rem;
-
-/*========== Font weight ==========*/
---font-medium: 500;
---font-bold: 700;
-
-/*========== Margenes Bottom ==========*/
---mb-0-5: .5rem;
---mb-0-75: .75rem;
---mb-1: 1rem;
---mb-1-5: 1.5rem;
---mb-2: 2rem;
---mb-2-5: 2.5rem;
---mb-3: 3rem;
-
-/*========== z index ==========*/
---z-tooltip: 10;
---z-fixed: 100;
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-    --first-color: hsl(182, 53%, 74%);
-    --button-color: hsl(246, 16%, 12%);
-    --button-color-alt: hsl(0, 0%, 28%);
-
-
-    --text-color: hsl(0, 0%, 75%);
-    --container-color: hsl(246, 16%, 12%);
-    --border-color: hsl(0, 0%, 20%);
-  }
 /*=============================================================================================*/
 /* S E L E C T O R   U N I V E R S A L
 /*=============================================================================================*/
@@ -109,10 +43,13 @@ h1, h2, h3 { font-style: normal; font-weight: bold; }
 .h3-autoresize--dark { font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (500 - 320))); }
 
 .h4-autoresize--light,
-.h4-autoresize--dark { font-size: calc(8px + (12 - 8) * ((100vw - 320px) / (500 - 320))); }
+.h4-autoresize--dark { font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (500 - 320))); }
 
 .h5-autoresize--light,
-.h5-autoresize--dark { font-size: calc(80px + (120 - 80) * ((100vw - 320px) / (500 - 320))); }
+.h5-autoresize--dark { font-size: calc(8px + (12 - 8) * ((100vw - 320px) / (500 - 320))); }
+
+.h6-autoresize--light,
+.h6-autoresize--dark { font-size: calc(80px + (120 - 80) * ((100vw - 320px) / (500 - 320))); }
 
 @media screen and ( min-width: 500px ){
     .h1-autoresize--light,
@@ -125,10 +62,13 @@ h1, h2, h3 { font-style: normal; font-weight: bold; }
     .h3-autoresize--dark { font-size: 20px; }
 
     .h4-autoresize--light,
-    .h4-autoresize--dark { font-size: 12px; }
+    .h4-autoresize--dark { font-size: 18px; }
 
     .h5-autoresize--light,
-    .h5-autoresize--dark { font-size: 120px; }
+    .h5-autoresize--dark { font-size: 12px; }
+
+    .h6-autoresize--light,
+    .h6-autoresize--dark { font-size: 120px; }
 }
 
 /*border: 1px dashed blue;*/
